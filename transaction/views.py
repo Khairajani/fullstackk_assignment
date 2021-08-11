@@ -39,9 +39,10 @@ class addtransaction(APIView):
                         d_name = data['department']
 
                         try:
+                            
                             company = CompanyLedgerMaster.objects.get(name=c_name)
                             data['company'] = company.id
-
+                            
                             branch = BranchMaster.objects.get(short_name=b_name)
                             data['branch'] = branch.id
 
