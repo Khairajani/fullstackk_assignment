@@ -81,11 +81,11 @@ class addtransaction(APIView):
                         return Response(response, status=status.HTTP_400_BAD_REQUEST)     
                         
                 except:
-                    response = {"status":{"branch": ["This field is required."]}, "status" : status.HTTP_400_BAD_REQUEST}
+                    response = {"message":{"branch": ["This field is required."]}, "status" : status.HTTP_400_BAD_REQUEST}
                     return Response(response, status=status.HTTP_400_BAD_REQUEST)    
 
             except:
-                response = {"status":{"company": ["This field is required."]} , "status" : status.HTTP_400_BAD_REQUEST}
+                response = {"message":{"company": ["This field is required."]} , "status" : status.HTTP_400_BAD_REQUEST}
                 return Response(response, status=status.HTTP_400_BAD_REQUEST)    
             
         except:
@@ -267,9 +267,9 @@ class gettransaction(APIView):
                         order_list.append(mydict)
                             
                         if order_list:
-                            response = {"data":order_list}
+                            response = {"data":order_list, "status" : status.HTTP_200_OK}              
                         else:
-                            response = {"data":"order list empty for given transaction"}
+                            response = {"data":"inventory empty for given transaction", "status" : status.HTTP_400_BAD_REQUEST}
 
                         return Response(response) 
 
