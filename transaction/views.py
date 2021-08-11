@@ -65,7 +65,7 @@ class addtransaction(APIView):
                                 con.change_conf()
                                 trn = serializer.save()                                
                                 # trn=serializer.data
-                                response = {"data":{'trn_id':trn.id,'trn_number':trn.transaction_number},"status":status.HTTP_201_CREATED}
+                                response = {"data":{'trn_id':trn.id,'trn_number':trn.transaction_number,'company':c_name, 'branch':b_name, 'department':d_name},"status":status.HTTP_201_CREATED}
                                 return Response(response, status=status.HTTP_201_CREATED)
 
                             else:
@@ -129,7 +129,7 @@ class addtransactionitem(APIView):
                                 
                                 trnItem = serializer.save()                                
                                 # trn=serializer.data
-                                response = {'data':{'trn_item_id':trnItem.id,'trn_item_article':trnItem.article.name} , "status" : status.HTTP_201_CREATED}
+                                response = {'data':{'trn_item_id':trnItem.id,'trn_item_article':a_name, 'trn_item_colour':c_name} , "status" : status.HTTP_201_CREATED}
                                 return Response(response, status=status.HTTP_201_CREATED)
 
                             else:
@@ -199,7 +199,7 @@ class addinventory(APIView):
                                     
                                     invent = serializer.save()                                
                                     # trn=serializer.data
-                                    response = {'data':{'invent_id':invent.id,'invent_article':invent.company.name}, "status" : status.HTTP_201_CREATED}
+                                    response = {'data':{'invent_id':invent.id,'invent_article':a_name,'invent_colour':col_name, 'invent_company':c_name}, "status" : status.HTTP_201_CREATED}
                                     return Response(response, status=status.HTTP_201_CREATED)
 
                                 else:
