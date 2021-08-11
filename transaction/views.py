@@ -117,12 +117,16 @@ class addtransactionitem(APIView):
                         try:
                             transaction = Transaction.objects.get(transaction_number = t_num)
                             data['transaction_id'] = transaction.id
-
+                            
                             article = ArticleMaster.objects.get(name=a_name)
                             data['article'] = article.id
 
                             colour = ColorMaster.objects.get(article=article,name=c_name)
                             data['colour'] = colour.id
+
+                            if TransactionItemDetail.objects.filter(transaction_id=data['transaction_id'], article=data['article'], colour=data['colour']).exists():
+                                response = {"message":"Similar line-item already exists, please add different line item", "status" : status.HTTP_400_BAD_REQUEST}
+                                return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
                             serializer = TransactionItemDetailSerializer(data=data)
                             if serializer.is_valid():
