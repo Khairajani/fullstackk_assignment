@@ -8,16 +8,25 @@
 - The ```http://127.0.0.1:8869/trnview/``` endpoint takes *[transaction_number]* fields in POST request to show the details of that particular transaction. It returns transaction details in nested line-items related to that particular transaction_number.
 - The ```http://127.0.0.1:8869/trndel/``` endpoint takes *[transaction_number]* fields in POST request to delete that particular transaction.
 
+### Doubts
+- If we have multiple inventory items linked to individual list-item, then why instead of having foreign-key as inventory-id, we having field such as 'article' and 'colour' in list-item table ? 
+- Ideally i guess rate should be the field of inventory-item and not list-item. 
+- Also, the qty will be the total of all the inventory items linked to a particular list item, right ?
+
 ### Assumptions and Cases
 - Cases:
-  - It is a backend code, which needs to be tested using 'request library' or 'postman'.
-
-- Assumptions:
   - company tag only accept one of following ['Ace']
   - branch tag only accept one of the following ['SUN', 'MOON']
   - department tag only accept one of following ['Warp Knitting','DPV']
   - article tag only accept one of following ['YarnArticle1', 'YarnArticle2']
   - colour tag only accept one of following ['White', 'Black', 'Red', 'Green', 'Yellow', 'Orange', 'Blue']
   - unit tag only accept one of following ['KG', 'M']
+
+- Assumptions:
+  - It is a backend code, which needs to be tested using 'request library' or 'postman'.
+  - There is a list-item table, which is having all the inputs as mentioned, along with article, colour etc. 
+  - Inventory is having foreign key as list-item. (ideally it should be opposite as per my doubts)
+
+
   
 Regards: Himanshu Khairajani
