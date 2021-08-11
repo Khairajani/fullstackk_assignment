@@ -1,6 +1,6 @@
 ## Transaction Endpoints
 ### Endpoints Description
-    There are 5 seller endpoints (as of now)  `trn/,trnitem/,invent/,trnview/,trndel/`.
+    ` There are 5 seller endpoints (as of now)  'trn/', 'trnitem/', 'invent/', 'trnview/', 'trndel/' `
 
 - The ```trn/``` endpoint takes *[company, branch, department, remarks(optional)]* fields in POST request to create a new transaction. It return the *transaction_id, transaction_number*
 - The ```trnitem/``` endpoint takes *[transaction_number, article, colour, required_date(yyyy-mm-dd) qty, rate, unit (Kg/M)]* fields in POST request to add the item line. The transaction_number is a field which tells us the transaction to which item-line belong to. It returns the *trn_item_id, trn_item_article*
@@ -8,5 +8,12 @@
 - The ```trnview/``` endpoint takes *[transaction_number]* fields in POST request to show the details of that particular transaction.
 - The ```trndel/``` endpoint takes *[transaction_number]* fields in POST request to delete that particular transaction.
 
-
+### Assumptions and Cases
+- Assumptions:
+  - company tag only accept one of following ['Ace']
+  - branch tag only accept one of the following ['SUN', 'MOON']
+  - department tag only accept one of following ['Warp Knitting','DPV']
+  - article tag only accept one of following ['YarnArticle1', 'YarnArticle2']
+  - colour tag only accept one of following ['White','Black','Red','Green','Yellow','Orange','Blue']
+  
 Regards: Himanshu Khairajani

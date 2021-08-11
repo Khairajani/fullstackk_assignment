@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.db import models
 from .models import Transaction, TransactionItemDetail, Inventory
-import datetime 
 
 # Register your models here.
 @admin.register(Transaction)

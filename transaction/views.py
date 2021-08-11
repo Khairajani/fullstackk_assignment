@@ -6,9 +6,7 @@ from rest_framework import status
 
 from .models import Transaction, TransactionItemDetail, Inventory, BranchMaster, DepartmentMaster, CompanyLedgerMaster, ArticleMaster, ColorMaster
 from .serializers import TransactionSerializer, TransactionItemDetailSerializer, InventorySerializer
-from datetime import datetime, timedelta
-import json
-import os
+from datetime import datetime
 import datetime
 
 # Create your views here.
@@ -23,7 +21,7 @@ class addtransaction(APIView):
     @method_decorator(csrf_exempt)   
 
     def get(self, request):
-        response = {"data":"add-transaction is working. please send POST request with transaction details to add your transaction", "status":status.HTTP_200_OK}
+        response = {"message":"add-transaction is working. please send POST request with transaction details to add your transaction", "status":status.HTTP_200_OK}
         return Response(response)
 
     def post(self, request):
