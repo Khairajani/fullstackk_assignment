@@ -61,7 +61,7 @@ class Transaction(models.Model):
     CLOSE = 'CLOSE'
     STATUS_CHOICES = [
         (PENDING, 'Pending'),
-        (COMPLETED, 'Complete'),
+        (COMPLETED, 'Completed'),
         (CLOSE, 'Close')]
 
     company = models.ForeignKey(CompanyLedgerMaster, on_delete = models.CASCADE)
