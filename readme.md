@@ -13,7 +13,7 @@
 - python manage.py populate_masters
 - python manage.py createsuperuser
     - (username): xyz
-      (email): PRESS ENTER
+    - (email): PRESS ENTER
     - (password): root
     - (password again): root
     - Bypass password validation and create user anyway? [y/N]: y
@@ -21,6 +21,7 @@
 - Runserver using "python manage.py runserver 8869", assuming 8869 to be the port address
 
 - Goto the development server address i.e. 'http://127.0.0.1:8869/' or 'localhost:8869/' to visit the home page to check the working of the server.
+
 
 ### ===== ###
 Transaction Endpoints: https://github.com/Khairajani/fullstackk_assignment/tree/main/transaction
