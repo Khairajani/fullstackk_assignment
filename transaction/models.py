@@ -101,7 +101,7 @@ class Inventory(models.Model):
         (KG, 'Kg'),
         (METRE, 'Metre'),]
 
-    transaction_item_id = models.ForeignKey(TransactionItemDetail, on_delete = models.PROTECT)
+    transaction_item_id = models.ForeignKey(TransactionItemDetail, on_delete = models.CASCADE)
     article = models.ForeignKey(ArticleMaster, on_delete = models.CASCADE)
     colour = models.ForeignKey(ColorMaster, on_delete = models.CASCADE)
     company = models.ForeignKey(CompanyLedgerMaster, on_delete = models.CASCADE)
