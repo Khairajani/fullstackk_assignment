@@ -4,7 +4,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response 
 from rest_framework import status
 
-
 from .models import Transaction, TransactionItemDetail, Inventory, BranchMaster, DepartmentMaster, CompanyLedgerMaster, ArticleMaster, ColorMaster
 from .serializers import TransactionSerializer, TransactionItemDetailSerializer, InventorySerializer
 from datetime import datetime, timedelta
@@ -17,7 +16,7 @@ class home(APIView):
     @method_decorator(csrf_exempt)
     
     def get(self, request):
-        response = {"data":"Home is working", "status":status.HTTP_200_OK}
+        response = {"message":"Home is working", "status":status.HTTP_200_OK}
         return Response(response)
 
 class addtransaction(APIView):
@@ -99,7 +98,7 @@ class addtransactionitem(APIView):
     @method_decorator(csrf_exempt)   
 
     def get(self, request):
-        response = {"data":"add-transaction-item working verdict. please send POST request with item details to add items", "status" : status.HTTP_200_OK}
+        response = {"message":"add-transaction-item working. please send POST request with item details to add items", "status" : status.HTTP_200_OK}
         return Response(response)
 
     def post(self, request):
@@ -163,7 +162,7 @@ class addinventory(APIView):
     @method_decorator(csrf_exempt)   
 
     def get(self, request):
-        response = {"data":"add-inventory working. please send POST request with inventory details to add data to your inventory", "status" : status.HTTP_200_OK}
+        response = {"message":"add-inventory working. please send POST request with inventory details to add data to your inventory", "status" : status.HTTP_200_OK}
         return Response(response)
 
     def post(self, request):
@@ -237,7 +236,7 @@ class gettransaction(APIView):
     @method_decorator(csrf_exempt)   
 
     def get(self, request):
-        response = {"data":"transaction-view working please send POST request with transaction_number to view transaction details", "status" : status.HTTP_200_OK}
+        response = {"message":"transaction-view working. please send POST request with transaction_number to view transaction details", "status" : status.HTTP_200_OK}
         return Response(response)
 
     def post(self, request, format=None):
@@ -296,7 +295,7 @@ class deletetransaction(APIView):
     @method_decorator(csrf_exempt)   
 
     def get(self, request):
-        response = {"data":"delete-transaction working please send POST request with transaction_number to delete the transaction", "status" : status.HTTP_200_OK}
+        response = {"message":"delete-transaction working please send POST request with transaction_number to delete the transaction", "status" : status.HTTP_200_OK}
         return Response(response)
 
     def post(self, request, format=None):
