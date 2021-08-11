@@ -317,10 +317,10 @@ class deletetransaction(APIView):
                                 break
                         
                         if flag:
-                            response = {"data":"Transation can't be deleted, as inventory exist"}
+                            response = {"data":"Transation can't be deleted, as inventory exist", "status" : status.HTTP_200_OK}
                         else:
                             transaction.delete()
-                            response = {"data":"Transation deleted"}
+                            response = {"data":"Transation deleted", "status" : status.HTTP_200_OK}
 
                         return Response(response) 
 
