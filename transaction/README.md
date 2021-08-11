@@ -9,6 +9,9 @@
 - The ```trndel/``` endpoint takes *[transaction_number]* fields in POST request to delete that particular transaction.
 
 ### Assumptions and Cases
+- Cases:
+  - It is a backend code, which needs to be tested using 'request library' or 'postman'.
+
 - Assumptions:
   - company tag only accept one of following ['Ace']
   - branch tag only accept one of the following ['SUN', 'MOON']
