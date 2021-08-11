@@ -56,9 +56,9 @@ class ColorMaster(models.Model):
 # Create your models here.
 
 class Transaction(models.Model):
-    PENDING = 'PE'
-    COMPLETED = 'CO'
-    CLOSE = 'CL'
+    PENDING = 'PENDING'
+    COMPLETED = 'COMPLETED'
+    CLOSE = 'CLOSE'
     STATUS_CHOICES = [
         (PENDING, 'Pending'),
         (COMPLETED, 'Complete'),
