@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.db import models
-from .models import Transaction, TransactionItemDetail, Inventory
+from .models import Transaction, TransactionItemDetail, Inventory, BranchMaster, DepartmentMaster, CompanyLedgerMaster, ArticleMaster, ColorMaster
 
 # Register your models here.
 @admin.register(Transaction)
 class TransactionAdmin(admin.ModelAdmin):
-    list_display = ('id','transaction_number','transaction_status','company','branch',)
+    list_display = ('id','transaction_number','transaction_status','company','branch','department')
     readonly_fields = ('transaction_number',)
 
     # cnt = 0
@@ -32,3 +32,23 @@ class TransactionItemDetailAdmin(admin.ModelAdmin):
 @admin.register(Inventory)
 class InventoryAdmin(admin.ModelAdmin):
     list_display = ('id','transaction_item_id','gross_qty','net_qty','unit','company','article','colour',)
+
+@admin.register(BranchMaster)
+class BranchMasterAdmin(admin.ModelAdmin):
+    list_display = ('id','short_name')
+
+@admin.register(DepartmentMaster)
+class DepartmentMasterAdmin(admin.ModelAdmin):
+    list_display = ('id','name',)
+
+@admin.register(CompanyLedgerMaster)
+class CompanyLedgerMasterAdmin(admin.ModelAdmin):
+    list_display = ('id','name')
+
+@admin.register(ArticleMaster)
+class ArticleMasterAdmin(admin.ModelAdmin):
+    list_display = ('id','short_name')
+
+@admin.register(ColorMaster)
+class ColorMasterAdmin(admin.ModelAdmin):
+    list_display = ('id','name')

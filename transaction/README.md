@@ -27,6 +27,8 @@
   - There is a list-item table, which is having all the inputs as mentioned, along with article, colour etc. 
   - Inventory is having foreign key as list-item. (ideally it should be opposite as per my doubts)
 
+- Error resolved:
+ - A small error was present in max_length of the model, which is resolved !
 
   
 Regards: Himanshu Khairajani

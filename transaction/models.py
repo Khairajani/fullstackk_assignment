@@ -68,7 +68,7 @@ class Transaction(models.Model):
     branch = models.ForeignKey(BranchMaster, on_delete = models.CASCADE)
     department = models.ForeignKey(DepartmentMaster, on_delete = models.CASCADE)
     transaction_number = models.CharField(max_length=50, blank=True, unique=True)
-    transaction_status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=PENDING,)
+    transaction_status = models.CharField(max_length=9, choices=STATUS_CHOICES, default=PENDING,)
     remarks = models.CharField(max_length=64, blank=True)
     
     def __str__(self):
@@ -88,7 +88,7 @@ class TransactionItemDetail(models.Model):
     required_date = models.DateField(validators=[MinValueValidator(datetime.date.today)])
     qty = models.FloatField()
     rate = models.PositiveIntegerField(default=1)
-    unit = models.CharField(max_length=2, choices=UNIT_CHOICES, default=KG,)
+    unit = models.CharField(max_length=5, choices=UNIT_CHOICES, default=KG,)
     
     def __str__(self):
         return str(self.id)
